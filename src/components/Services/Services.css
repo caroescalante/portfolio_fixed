@@ -1,0 +1,22 @@
+.services-section {
+  padding: 80px 0;
+  font-family: 'TT Fors Trial Regular', sans-serif;
+    background-color: #efe9e7;
+}
+
+.title-servicios {
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+}
+
+@font-face {
+  font-family: 'TT Fors Trial Regular';
+  src: url('../../Fonts/TT\ Fors\ Trial\ Regular.ttf') format('truetype');
+}
+
+
+.caracteristica-servicio {
+    font-family: 'TT Fors Trial Regular', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}

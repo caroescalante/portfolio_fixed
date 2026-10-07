@@ -1,0 +1,64 @@
+.cv-section {
+  padding-top: 90px;
+  padding-bottom: 60px;
+  background-color: #efe9e7;
+  text-align: center;
+}
+
+.cv-title h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+}
+
+.cv-download-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e58fb3;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  transition: 0.25s ease;
+}
+
+.cv-download-btn:hover {
+  background-color: #d1668f;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.cv-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin: 20px auto;
+  max-width: 760px;
+}
+
+.cv-page {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cv-loading {
+  color: #2b2b2b;
+  font-size: 1.1em;
+  padding: 40px 0;
+}
+
+@media (max-width: 767px) {
+  .cv-title h1 {
+    font-size: 1.6em;
+  }
+}

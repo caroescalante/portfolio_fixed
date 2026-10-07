@@ -1,0 +1,103 @@
+.process-section {
+  padding: 90px 10% 70px;
+  background-color: #f3ece9;
+  text-align: center;
+}
+
+.process-title h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.process-title .heart-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.process-subtitle {
+  font-size: 1.1em;
+  color: #5a5a5a;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  position: relative;
+  flex: 1 1 220px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 28px 20px 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.process-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #e58fb3;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 16px;
+}
+
+.process-step-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.process-step-text {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #5a5a5a;
+}
+
+/* Línea conectora entre pasos, solo en desktop */
+.process-connector {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .process-connector {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: -36px;
+    width: 24px;
+    height: 2px;
+    background-color: #e5b6c9;
+  }
+}
+
+@media (max-width: 767px) {
+  .process-section {
+    padding: 70px 6% 50px;
+  }
+
+  .process-title h1 {
+    font-size: 1.8em;
+  }
+
+  .process-steps {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'TT Fors Trial Regular';
+  src: url('../../Fonts/TT\ Fors\ Trial\ Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hagrid-Regular-trial';
+  src: url('../../Fonts/Hagrid-Regular-trial.ttf') format('truetype');
+}
+
+.contact-section {
+  padding: 80px 0;
+  font-family: 'TT Fors Trial Regular', sans-serif;
+  background-color: #efe9e7;
+  text-align: left;
+}
+
+.title-contacto {
+  font-family: 'Hagrid-Regular-trial', bold;
+  font-size: 50px;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.info-contact {
+  font-family: 'TT Fors Trial Regular', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  margin-top: 14px;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 700px;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #2b2b2b;
+  text-decoration: none;
+  font-family: 'TT Fors Trial Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 30px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.contact-card-button {
+  border: none;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  background-color: #e58fb3;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.contact-icon {
+  font-size: 22px;
+}
+
+@media (max-width: 767px) {
+  .title-contacto {
+    font-size: 34px;
+    margin-left: 6%;
+  }
+
+  .info-contact {
+    font-size: 18px;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  .contact-cards {
+    margin-left: 6%;
+    margin-right: 6%;
+    flex-direction: column;
+  }
+}

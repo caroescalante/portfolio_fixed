@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body, html {
+  overflow-x: hidden;
+}
+
+.home-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efe9e7;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 👇 empuja todo el contenido debajo del navbar fijo */
+  padding: calc(var(--navbar-height, 96px) + 3vh) 4vw 6vh;
+  box-sizing: border-box;
+}
+
+/* ROL */
+.hero-role {
+  font-size: clamp(1.1rem, 2.4vw, 2.2rem);
+  color: #7a706d;
+  margin: 0 0 1rem;
+  font-weight: 610;
+  letter-spacing: 3px;
+  text-align: center;
+  z-index: 3;
+}
+
+/* PORT/FOLIO de fondo */
+.hero-title {
+  position: absolute;
+  /* 👇 mismo offset que el padding-top de .home-section, así no queda atrás del navbar */
+  top: calc(var(--navbar-height, 96px) + 3vh);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  line-height: 0.8;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-port {
+  display: block;
+  font-size: clamp(3.5rem, 16vw, 11rem);
+  color: #dd73a1;
+  font-weight: 700;
+  text-shadow:
+    10px 0px 0px #eac9d4,
+    20px 0 0 #eac9d4;
+}
+
+.hero-folio {
+  display: block;
+  font-size: clamp(3.8rem, 18vw, 12.5rem);
+  font-family: 'Anton', sans-serif;
+  color: #efb7ce;
+  text-shadow: 20px 0px 0px rgba(239, 211, 220, 0.5);
+}
+
+/* CONTENEDOR PRINCIPAL: imagen + nombre en fila (desktop) / columna (mobile) */
+.hero-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 6vh;
+  flex-wrap: wrap;
+}
+
+/* IMAGEN */
+.hero-image {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+/* CONTENIDO / NOMBRE */
+.hero-content {
+  flex: 1 1 320px;
+  z-index: 3;
+  text-align: left;
+  min-width: 0;
+}
+
+.hero-name {
+  line-height: 0.9;
+  margin: 0;
+}
+
+.name-carolina {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  color: #000;
+  display: block;
+}
+
+@font-face {
+  font-family: 'Parfumerie';
+  src: url('../../Fonts/parfumerie-script-regular.otf') format('truetype');
+}
+
+.name-escalante {
+  font-family: 'Parfumerie';
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  color: #000;
+  display: block;
+}
+
+/* BOTON */
+.btn-conoceme-container {
+  position: relative;
+  z-index: 4;
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-conoceme {
+  background-color: #ff66c4;
+  color: #ffffff;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-conoceme:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 TABLET */
+@media (max-width: 1024px) {
+  .hero-main {
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .hero-title {
+    position: relative;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .hero-main {
+    flex-direction: column;
+    margin-top: 4vh;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 260px;
+  }
+
+  .btn-conoceme-container {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,50 @@
+
+.about-section {
+  padding: 80px 0;
+   font-family: 'Poppins', sans-serif;
+   background-color: #efe9e7;
+}
+
+.about-text {
+  padding-right: 40px;
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 10%;
+  font-size: 130%;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  max-width: 700px; 
+  border-radius: 20px;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.about-row {
+  display: flex;
+  align-items: center;
+}
+
+/* para que se apilen las rows en responsive */
+@media (max-width: 768px) {
+  .about-row {
+    flex-direction: column; 
+  }
+}
+
+.heart-icon {
+    width: 40px; 
+    height: 40px;
+}
+
+.about-title .h1{
+    font-size: 90px;
+}
