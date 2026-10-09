@@ -14,9 +14,9 @@ const translations = {
     about: {
       title: "¿Quién soy?",
       intro: "Hola! Mi nombre es Caro 💖",
-      p1: "Soy Ingeniera en Sistemas de Información (UTN, en curso), Técnica en Informática y Full Stack Developer. Me especializo en diseñar arquitecturas de datos y de soluciones, y en transformar procesos manuales o desordenados en sistemas automatizados, escalables y confiables.",
-      p2: "Disfruto meterme en el problema real detrás de cada proyecto: entender qué necesita el negocio, diseñar la solución más adecuada y llevarla a producción. Ya sea modelando una base de datos, definiendo la arquitectura de un sistema o resolviendo un incidente crítico, mi objetivo siempre es el mismo: que la tecnología resuelva problemas reales.",
-      p3: "Soy proactiva, resiliente y con una curiosidad que no se apaga — disfruto aprender tecnologías y dominios nuevos, trabajar en equipo y transformar ideas en proyectos reales que generan impacto✨",
+      p1: "Soy Data Engineer y Solutions Architect, con formación en Ingeniería en Sistemas (UTN, en curso) y Full Stack Developer.es y confiables.",
+      p2: "Me dedico a convertir procesos manuales o desordenados en sistemas automatizados, claros y confiables. Me gusta entender qué necesita tu negocio de verdad, diseñar la solución que mejor le sirva y llevarla a producción.",
+      p3: "Soy proactiva, curiosa y trabajo cerca de mis clientes, porque creo que la mejor tecnología es la que resuelve problemas reales ✨",
     },
     process: {
       title: "¿Cómo trabajo?",
@@ -87,6 +87,11 @@ const translations = {
           title: "Pokémons",
           description:
             "Web donde podrás crear tu propio pokémon, asignarlo a una casa, ver el detalle, editarlos, eliminarlos, filtrarlos y navegar a través de todas las casas.",
+        },
+        sistemas: {
+          title: "Sistema de Gestion de Stock",
+          description:
+            "Sistema para gestionar el inventario y las compras de una empresa, con funcionalidades para registrar productos, realizar pedidos y generar reportes.",
         },
       },
     },
@@ -180,6 +185,11 @@ const translations = {
           title: "Pokémons",
           description:
             "A web app where you can create your own Pokémon, assign it to a house, view its details, edit or delete it, filter results, and browse through every house.",
+        },
+        sistemas: {
+          title: "Stock Management System",
+          description:
+            "A system for managing inventory and purchases of a company, with functionalities to register products, place orders, and generate reports.",
         },
       },
     },

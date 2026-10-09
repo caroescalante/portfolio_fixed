@@ -39,7 +39,7 @@ const Home = () => {
         <button 
           className="btn-conoceme"
           onClick={() => {
-            document.getElementById("about").scrollIntoView({
+            document.getElementById("contacto").scrollIntoView({
               behavior: "smooth"
             });
           }}

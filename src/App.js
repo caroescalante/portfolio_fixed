@@ -7,11 +7,14 @@ import Projects from './components/Projects/Projects.js';
 import Process from './components/Process/Process.js';
 import Resume from './components/Resume/Resume.js';
 import Contacto from './components/Contact/Contact.js';
+import Cursor from './components/Cursor/Cursor.js';
+
 import './App.css';
 
 function App() {
   return (
     <LanguageProvider>
+      <Cursor />
       <div className="App">
         <Home />
         <Navbar />

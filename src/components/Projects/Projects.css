@@ -1,79 +1,188 @@
-
 @font-face {
   font-family: 'SloopScriptProBold';
-  src: url('../../Fonts/sloop-script-pro-bold.otf') format('truetype');
+  src: url('../../Fonts/sloop-script-pro-bold.otf') format('opentype');
+  font-display: swap;
 }
 
+/* ============ TÍTULO ============ */
 .title {
-    font-family: 'SloopScriptProBold';
-    font-size: 5rem;
-    color: #000;
-    margin-left: 9%; 
+  font-family: 'SloopScriptProBold';
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin-left: 9%;
+  background: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* ============ SECCIÓN ============ */
 .projects-section {
-    padding: 80px 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #efe9e7;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink, #3b2330);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--navbar-height, 96px) + 3vh) 5vw 7vh;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(228, 213, 245, 0.85) 0, transparent 38%),
+    radial-gradient(circle at 88% 12%, rgba(249, 214, 225, 0.95) 0, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(242, 167, 192, 0.45) 0, transparent 42%),
+    radial-gradient(circle at 10% 85%, rgba(255, 233, 240, 1) 0, transparent 40%),
+    var(--cream, #fff8f5);
 }
 
+/* ============ CARRUSEL ============ */
+.projects-carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 clamp(2.2rem, 4vw, 3.5rem);
+}
+
+.projects-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  /* aire para que no se corten el hover ni las sombras */
+  padding: 2rem 0.5rem 2.5rem;
+}
+
+.projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards visibles: 3 en PC, 2 en tablet, 1 en celular */
+.carousel-slide {
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 3rem) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+.carousel-slide > * {
+  width: 100%;
+}
+
+/* ============ FLECHAS ============ */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #f48fb9 0%, #e0509a 60%, #b8337a 100%);
+  box-shadow:
+    0 8px 20px rgba(224, 80, 154, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carousel-arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.carousel-arrow-prev { left: 0; }
+.carousel-arrow-next { right: 0; }
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow:
+    0 12px 26px rgba(224, 80, 154, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow:focus-visible {
+  outline: 3px solid #b8337a;
+  outline-offset: 3px;
+}
+
+/* ============ CARDS ============ */
+/* el espacio entre cards lo da el carrusel; acá solo un poco de aire interno */
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
+  padding: 0.25rem 0.5rem !important;
   height: auto !important;
 }
 
-
 .project-card-view {
-  border-radius: 15px !important;
-  background-color: transparent !important;
-  opacity: 0.95 !important;
-  transition: all 0.4s ease !important;
+  border-radius: 20px !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--ink, #3b2330) !important;
+  opacity: 1 !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
   height: 100% !important;
   border: 3px solid transparent !important;
+  box-shadow: 0 10px 28px rgba(224, 80, 154, 0.15);
+  overflow: hidden;
 }
 
-.project-card:nth-child(1) .project-card-view {
-  border-color: #ff00aa;
-}
-
-.project-card:nth-child(2) .project-card-view {
-  border-color: #ff4dd2;
-}
-
-.project-card:nth-child(3) .project-card-view {
-  border-color: #cc0066;
-}
-
-.project-card:nth-child(4) .project-card-view {
-  border-color: #e6b3cc;
-}
+/* bordes rosados que se repiten cada 4 cards */
+.project-card:nth-child(4n + 1) .project-card-view { border-color: #ff4dd2; }
+.project-card:nth-child(4n + 2) .project-card-view { border-color: #e0509a; }
+.project-card:nth-child(4n + 3) .project-card-view { border-color: #cc0066; }
+.project-card:nth-child(4n + 4) .project-card-view { border-color: #e6b3cc; }
 
 .project-card-view:hover {
   transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 64px currentColor;
+  box-shadow: 0 18px 40px rgba(224, 80, 154, 0.35);
 }
 
+.project-heading {
+  color: #b8337a !important;
+  font-size: 1.8em !important;
+  font-weight: 600 !important;
+  padding-top: 10px !important;
+}
+
+.card-img-top {
+  padding: 20px !important;
+  opacity: 1 !important;
+  border-radius: 10px !important;
+}
+
+/* ============ BLOG (por si lo seguís usando) ============ */
 .blog-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
+  padding: 50px 25px !important;
   height: auto !important;
 }
 
 .blog-card-view {
-  background-color: transparent !important;
-  box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
-  color: white !important;
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 6px 18px rgba(224, 80, 154, 0.2) !important;
+  color: var(--ink, #3b2330) !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
 
 .blog-link {
-  color: white !important;
+  color: var(--ink, #3b2330) !important;
   text-decoration: none !important;
 }
 
@@ -84,39 +193,131 @@
 .blog-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
-}
-
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
+  box-shadow: 0 10px 28px rgba(224, 80, 154, 0.4) !important;
 }
 
 .blog-img {
-  padding: 0px !important;
-  opacity: 0.8 !important;
-  border-radius: 0px !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
 }
 
+/* ============ BOTONES ============ */
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background: linear-gradient(135deg, #f48fb9 0%, #e0509a 100%) !important;
+  border-color: #e0509a !important;
+  border-radius: 999px !important;
+  padding-left: 1.2rem !important;
+  padding-right: 1.2rem !important;
+  box-shadow: 0 6px 16px rgba(224, 80, 154, 0.3);
 }
 
 .btn-primary:hover {
   color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  background: linear-gradient(135deg, #e0509a 0%, #b8337a 100%) !important;
+  border-color: #b8337a !important;
 }
+
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;
 }
-.project-heading {
-  color: white !important;
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
+
+.btn:focus-visible {
+  outline: 3px solid #b8337a !important;
+  outline-offset: 2px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 992px) {
+  .carousel-slide {
+    flex-basis: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .projects-carousel {
+    padding: 0 2rem;
+  }
+
+  .carousel-slide {
+    flex-basis: 100%;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ============ BOTONES SEPARADOS (siempre, también cuando se apilan) ============ */
+.project-card-view .btn {
+  margin: 0.3rem 0.4rem !important;
+}
+
+/* ============ CARDS MÁS CHICAS EN TABLET Y CELULAR ============ */
+@media (max-width: 992px) {
+  .project-card-view .card-img-top {
+    padding: 12px !important;
+  }
+
+  .project-heading {
+    font-size: 1.4em !important;
+    padding-top: 4px !important;
+  }
+
+  .project-card-view .card-text {
+    font-size: 0.88rem !important;
+    line-height: 1.45;
+    text-align: left !important;
+  }
+
+  .project-card-view .card-body {
+    padding: 0.9rem 1rem 1.1rem !important;
+  }
+
+  .project-card-view .btn {
+    font-size: 0.85rem !important;
+    padding: 0.35rem 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* la card queda angosta y centrada dentro de cada slide */
+  .carousel-slide {
+    justify-content: center;
+  }
+
+  .carousel-slide > .project-card-view,
+  .carousel-slide .project-card-view {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .project-heading {
+    font-size: 1.2em !important;
+  }
+
+  .project-card-view .card-text {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-arrow,
+  .project-card-view {
+    transition: none !important;
+  }
 }

@@ -17,11 +17,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true)
-            } else {
-                setScrolled(false)
-            }
+            setScrolled(window.scrollY > 50)
         }
 
         window.addEventListener("scroll", handleScroll)
@@ -33,14 +29,26 @@ const Navbar = () => {
 
     return (
         <div className='header'>
-            <nav className={scrolled ? "navbar active" : "navbar"}>
+            <nav className={`navbar${scrolled ? ' active' : ''}${click ? ' open' : ''}`}>
                 <a href='/' className='logo'>
                     <span className="logo-text">{t.home}</span>
                 </a>
 
-                <div className='hamburger' onClick={handleClick}>
-                    {click ? (<FaTimes size={30} style={{ color: '#ffffff' }} />)
-                        : (<FaBars size={30} style={{ color: '#ffffff' }} />)}
+                <div
+                    className='hamburger'
+                    onClick={handleClick}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={click ? "Cerrar menú" : "Abrir menú"}
+                    aria-expanded={click}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault()
+                            handleClick()
+                        }
+                    }}
+                >
+                    {click ? <FaTimes size={20} /> : <FaBars size={20} />}
                 </div>
 
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
