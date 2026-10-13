@@ -321,3 +321,59 @@
     transition: none !important;
   }
 }
+/* ============ SLIDESHOW DENTRO DE CADA CARD ============ */
+/* Todas las imágenes se apilan en la misma celda: la card toma la altura
+   de la más alta y no "salta" cuando cambia de imagen */
+.card-slideshow {
+  position: relative;
+  display: grid;
+}
+
+.card-slideshow .slideshow-img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0 !important;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.card-slideshow .slideshow-img.is-active {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.slideshow-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.slideshow-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(224, 80, 154, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slideshow-dot.is-active {
+  background: #e0509a;
+  transform: scale(1.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-slideshow .slideshow-img,
+  .slideshow-dot {
+    transition: none !important;
+  }
+}

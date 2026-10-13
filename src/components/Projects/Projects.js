@@ -3,8 +3,18 @@ import './Projects.css';
 import henryGameZone from "../../Assets/henry_game_zone.png";
 import pokemons from "../../Assets/pokemon_landing.png";
 import sistemas from "../../Assets/sistema_gestion.png";
+import sistemas1 from "../../Assets/sistema1.png";
+import sistemas2 from "../../Assets/sistema2.png";
+import sistemas3 from "../../Assets/sistema3.png";
+import sistemas4 from "../../Assets/sistema4.png";
+import sistemas5 from "../../Assets/sistema5.png";
 import rv from "../../Assets/rv_landing.png";
+import rv1 from "../../Assets/rv1.png";
+import rv2 from "../../Assets/rv2.png";
 import tarot from "../../Assets/tarot_landing.png";
+import tarot1 from "../../Assets/tarot1.png";
+import tarot2 from "../../Assets/tarot2.png";
+import tarot3 from "../../Assets/tarot3.png";
 import { Container } from "react-bootstrap";
 import ProjectCard from "./ProjectCards.js";
 import { useLanguage } from "../LanguageContext";
@@ -12,11 +22,11 @@ import translations from "../translations.js";
 
 // Cada proyecto en un solo lugar: para agregar uno nuevo, sumá una línea acá
 const PROJECTS = [
-    { key: "rv", img: rv, gh: "https://github.com/caroescalante/RV-WebC", demo: "https://rv-web-c.vercel.app/" },
-    { key: "tarot", img: tarot, gh: "https://github.com/caroescalante/tarot-web", demo: "https://tarot-web-alpha.vercel.app/" },
+    { key: "rv", img: [rv, rv1, rv2], gh: "https://github.com/caroescalante/RV-WebC", demo: "https://rv-web-c.vercel.app/" },
+    { key: "tarot", img: [tarot, tarot1, tarot2, tarot3], gh: "https://github.com/caroescalante/tarot-web", demo: "https://tarot-web-alpha.vercel.app/" },
+    { key: "sistemas", img: [sistemas, sistemas1, sistemas2, sistemas3, sistemas4, sistemas5], gh: "https://github.com/caroescalante/distribuidora_dismarco", demo: "https://distribuidora-dismarco.vercel.app/" },
     { key: "gamezone", img: henryGameZone, gh: "https://github.com/caroescalante/PF-Henry-GameZone-1", demo: "https://pf-henry-game-zone-1.vercel.app/" },
     { key: "pokemons", img: pokemons, gh: "https://github.com/caroescalante/PI-Pokemons", demo: "https://pi-pokemons-rose.vercel.app/" },
-    { key: "sistemas", img: sistemas, gh: "https://github.com/caroescalante/distribuidora_dismarco", demo: "https://distribuidora-dismarco.vercel.app/" },
 ];
 
 const Projects = () => {
